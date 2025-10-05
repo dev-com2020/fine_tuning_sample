@@ -1,0 +1,34 @@
+{
+  "metrics": {
+    "total_steps": 2,
+    "total_epochs": 1.0,
+    "total_training_time": 0,
+    "final_train_loss": 0,
+    "best_eval_loss": Infinity,
+    "learning_rate_schedule": [
+      {
+        "step": 2,
+        "lr": 1e-05
+      }
+    ],
+    "loss_history": [],
+    "eval_loss_history": [],
+    "total_flos": 2148318314496.0
+  },
+  "model_metrics": {
+    "model_size_mb": 45.51630878448486,
+    "total_parameters": 126799104,
+    "trainable_parameters": 48000,
+    "trainable_percentage": 0.03785515708375983
+  },
+  "analysis": {
+    "convergence_rate": 0.0,
+    "overfitting_risk": "unknown",
+    "training_efficiency": "unknown",
+    "recommendations": [
+      "Tylko jedna epoka - rozważ więcej epok dla lepszego treningu",
+      "Mało kroków treningu - rozważ większy dataset lub więcej epok"
+    ]
+  },
+  "timestamp": "2025-10-05T12:55:21.834334"
+}

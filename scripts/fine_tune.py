@@ -120,7 +120,7 @@ def tokenize_function(examples, tokenizer, max_length: int):
     tokenized = tokenizer(
         texts,
         truncation=True,
-        padding=False,
+        padding="max_length",
         max_length=max_length,
         return_tensors=None
     )
@@ -202,7 +202,8 @@ def main():
     # Data collator
     data_collator = DataCollatorForLanguageModeling(
         tokenizer=tokenizer,
-        mlm=False
+        mlm=False,
+        pad_to_multiple_of=8
     )
     
     # Argumenty treningu
@@ -218,7 +219,7 @@ def main():
         logging_steps=config['training']['logging_steps'],
         save_steps=config['training']['save_steps'],
         eval_steps=config['training']['eval_steps'],
-        evaluation_strategy=config['training']['evaluation_strategy'],
+        eval_strategy=config['training']['evaluation_strategy'],
         save_strategy=config['training']['save_strategy'],
         load_best_model_at_end=config['training']['load_best_model_at_end'],
         metric_for_best_model=config['training']['metric_for_best_model'],

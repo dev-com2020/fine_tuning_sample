@@ -39,7 +39,7 @@ matplotlib>=3.7.0
 seaborn>=0.12.0
 
 # Narzędzia do pracy z modelami GGML
-ggml-python>=0.1.0
+ggml-python>=0.0.37
 
 # Narzędzia do konwersji modeli
 safetensors>=0.3.0

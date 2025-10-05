@@ -1,0 +1,16 @@
+{
+  "total_steps": 2,
+  "total_epochs": 1.0,
+  "total_training_time": 0,
+  "final_train_loss": 0,
+  "best_eval_loss": Infinity,
+  "learning_rate_schedule": [
+    {
+      "step": 2,
+      "lr": 1e-05
+    }
+  ],
+  "loss_history": [],
+  "eval_loss_history": [],
+  "total_flos": 2148318314496.0
+}
