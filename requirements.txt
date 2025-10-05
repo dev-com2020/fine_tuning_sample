@@ -1,0 +1,48 @@
+# Główne biblioteki do fine-tuningu
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.12.0
+accelerate>=0.20.0
+peft>=0.4.0
+
+# Narzędzia do przetwarzania danych
+pandas>=1.5.0
+numpy>=1.24.0
+tqdm>=4.65.0
+
+# Narzędzia do monitorowania i logowania
+wandb>=0.15.0
+tensorboard>=2.13.0
+
+# Narzędzia do optymalizacji
+bitsandbytes>=0.39.0
+
+# Narzędzia do testowania modeli
+evaluate>=0.4.0
+
+# Narzędzia do pracy z plikami
+pyyaml>=6.0
+jsonschema>=4.17.0
+
+# Narzędzia do pracy z LM Studio
+openai>=1.0.0
+requests>=2.31.0
+
+# Narzędzia do formatowania danych
+jsonlines>=3.1.0
+
+# Narzędzia do statystyk
+scikit-learn>=1.3.0
+
+# Narzędzia do wizualizacji
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Narzędzia do pracy z modelami GGML
+ggml-python>=0.1.0
+
+# Narzędzia do konwersji modeli
+safetensors>=0.3.0
+
+# Narzędzia do optymalizacji pamięci
+psutil>=5.9.0

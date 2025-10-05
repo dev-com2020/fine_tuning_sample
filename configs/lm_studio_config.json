@@ -1,0 +1,48 @@
+{
+  "lm_studio": {
+    "api_url": "http://localhost:1234/v1",
+    "model_endpoint": "/completions",
+    "chat_endpoint": "/chat/completions",
+    "timeout": 300,
+    "max_retries": 3,
+    "temperature": 0.7,
+    "max_tokens": 2048,
+    "top_p": 0.9,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0
+  },
+  "models": {
+    "available_models": [
+      {
+        "name": "llama-2-7b-chat",
+        "path": "./models/llama-2-7b-chat.gguf",
+        "type": "llama",
+        "size": "7B"
+      },
+      {
+        "name": "mistral-7b-instruct",
+        "path": "./models/mistral-7b-instruct.gguf", 
+        "type": "mistral",
+        "size": "7B"
+      },
+      {
+        "name": "codellama-7b-instruct",
+        "path": "./models/codellama-7b-instruct.gguf",
+        "type": "codellama",
+        "size": "7B"
+      }
+    ]
+  },
+  "data_formats": {
+    "input_format": "instruction-response",
+    "output_format": "jsonl",
+    "instruction_template": "<s>[INST] {instruction} [/INST]",
+    "response_template": "{response}</s>"
+  },
+  "fine_tuning": {
+    "supported_formats": ["jsonl", "json", "txt"],
+    "max_dataset_size": "1GB",
+    "validation_split": 0.1,
+    "test_split": 0.05
+  }
+}

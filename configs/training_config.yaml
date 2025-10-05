@@ -1,0 +1,67 @@
+# Konfiguracja dla fine-tuningu modeli
+
+# Podstawowe ustawienia
+model:
+  name: "llama-2-7b-chat"  # Nazwa modelu z LM Studio
+  path: "./models/"         # Ścieżka do modeli
+  max_length: 2048         # Maksymalna długość sekwencji
+  padding: "right"         # Kierunek paddingu
+
+# Ustawienia treningu
+training:
+  output_dir: "./output"
+  num_train_epochs: 3
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  warmup_steps: 100
+  logging_steps: 10
+  save_steps: 500
+  eval_steps: 500
+  evaluation_strategy: "steps"
+  save_strategy: "steps"
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  
+# Ustawienia LoRA
+lora:
+  enabled: true
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.1
+  target_modules:
+    - "q_proj"
+    - "v_proj"
+    - "k_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+
+# Ustawienia optymalizacji pamięci
+memory_optimization:
+  gradient_checkpointing: true
+  dataloader_pin_memory: false
+  fp16: false
+  bf16: true
+  use_8bit_optimizer: false
+
+# Ustawienia danych
+data:
+  train_file: "./data/train.jsonl"
+  eval_file: "./data/eval.jsonl"
+  max_train_samples: null  # null = użyj wszystkich
+  max_eval_samples: null
+  
+# Ustawienia logowania
+logging:
+  use_wandb: false
+  wandb_project: "fine-tuning"
+  use_tensorboard: true
+  log_level: "INFO"
+
+# Ustawienia seed
+seed: 42
